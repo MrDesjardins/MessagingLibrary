@@ -5,6 +5,8 @@
         <version>1.0.0</version>
         <authors>Patrick Desjardins</authors>
         <owners>Patrick Desjardins</owners>
+        <projectUrl>https://github.com/MrDesjardins/MessagingLibrary</projectUrl>
+        <iconUrl>https://raw.github.com/MrDesjardins/MessagingLibrary/master/Nuget/feedbackIcon.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>This is a simple light library to use between your layers to send feedback for operation.</description>
         <summary>This is a simple light library to use between your layers to send feedback for operation.</summary>
