@@ -3,6 +3,7 @@
     <metadata>
         <id>FeedBack</id>
         <version>1.0.0</version>
+        <title>FeedBack Message Library</title>
         <authors>Patrick Desjardins</authors>
         <owners>Patrick Desjardins</owners>
         <projectUrl>https://github.com/MrDesjardins/MessagingLibrary</projectUrl>
