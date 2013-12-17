@@ -17,7 +17,7 @@ namespace MessagingLibrary
         Fatal
     }
 
-    internal interface IFeedBack
+    public interface IFeedBack
     {
         string Code { get; set; }
         string Message { get; set; }

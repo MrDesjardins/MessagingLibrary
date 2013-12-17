@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FeedBack.cs" />
+    <Compile Include="FeedBackCollection.cs" />
     <Compile Include="IFeedBack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
