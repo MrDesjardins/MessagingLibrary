@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MessagingLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MSTestExtensions;
 
 namespace UnitTestMessagingLibrary
 {
@@ -86,6 +87,101 @@ namespace UnitTestMessagingLibrary
             Assert.AreEqual(CODE1 + ", " + CODE2, feedBack.Code);
             Assert.AreEqual(MESSAGE1 + ", " + MESSAGE2, feedBack.Message);
             Assert.AreEqual(FeedBackType.Unknown, feedBack.Type);
+        }
+
+        [TestMethod]
+        public void FeedBackCollection_TryToSetCode_ThrowException()
+        {
+            //Arrange
+            const string CODE1 = "Code123";
+            var feedBack = new FeedBackCollection();
+
+            //Act & Assert
+            ExceptionAssert.Throws<NotImplementedException>(()=>feedBack.Code = CODE1);
+        }
+        [TestMethod]
+        public void FeedBackCollection_TryToSetMessage_ThrowException()
+        {
+            //Arrange
+            const string MESSAGE1 = "MessageABC XYZ";
+            var feedBack = new FeedBackCollection();
+
+            //Act & Assert
+            ExceptionAssert.Throws<NotImplementedException>(() => feedBack.Message = MESSAGE1);
+        }
+
+        [TestMethod]
+        public void FeedBackCollection_TryToSetType_ThrowException()
+        {
+            //Arrange
+            var feedBack = new FeedBackCollection();
+
+            //Act & Assert
+            ExceptionAssert.Throws<NotImplementedException>(() => feedBack.Type = FeedBackType.Info);
+        }
+
+        [TestMethod]
+        public void FeedBackCollection_AddMessageWithMessageOnly_MessageIsSet()
+        {
+            //Arrange
+            const string MESSAGE1 = "MessageABC XYZ";
+            var feedBack = new FeedBackCollection();
+
+            //Act
+            feedBack.AddMessage(MESSAGE1);
+
+            //Assert
+            Assert.AreEqual(MESSAGE1, feedBack.Message);
+        }
+
+        [TestMethod]
+        public void FeedBackCollection_AddMessageWithCodeMessagOnly_MessageCodeAreSet()
+        {
+            //Arrange
+            const string CODE1 = "Code123";
+            const string MESSAGE1 = "MessageABC XYZ";
+            var feedBack = new FeedBackCollection();
+
+            //Act
+            feedBack.AddMessage(CODE1,MESSAGE1);
+
+            //Assert
+            Assert.AreEqual(CODE1, feedBack.Code);
+            Assert.AreEqual(MESSAGE1, feedBack.Message);
+            Assert.AreEqual(FeedBackType.Unknown, feedBack.Type);
+        }
+
+        [TestMethod]
+        public void FeedBackCollection_AddMessageWithCodeMessageTypeOnly_MessageCodeTypeAreSet()
+        {
+            //Arrange
+            const string CODE1 = "Code123";
+            const string MESSAGE1 = "MessageABC XYZ";
+            var feedBack = new FeedBackCollection();
+
+            //Act
+            feedBack.AddMessage(CODE1, MESSAGE1, FeedBackType.Info);
+
+            //Assert
+            Assert.AreEqual(CODE1, feedBack.Code);
+            Assert.AreEqual(MESSAGE1, feedBack.Message);
+            Assert.AreEqual(FeedBackType.Info, feedBack.Type);
+        }
+
+        [TestMethod]
+        public void FeedBackCollection_AddMessageWithMessageTypeOnly_MessageTypeAreSet()
+        {
+            //Arrange
+            const string MESSAGE1 = "MessageABC XYZ";
+            var feedBack = new FeedBackCollection();
+
+            //Act
+            feedBack.AddMessage(MESSAGE1, FeedBackType.Info);
+
+            //Assert
+            Assert.AreEqual(string.Empty,feedBack.Code);
+            Assert.AreEqual(MESSAGE1, feedBack.Message);
+            Assert.AreEqual(FeedBackType.Info, feedBack.Type);
         }
     }
 }
