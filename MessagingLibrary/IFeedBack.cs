@@ -22,7 +22,7 @@ namespace MessagingLibrary
         string Code { get; set; }
         string Message { get; set; }
         FeedBackType Type { get; set; }
-
+        bool IsValid { get; set; }
         void AddMessage(string code, string message);
         void AddMessage(string message);
         void AddMessage(string code, string message, FeedBackType type);

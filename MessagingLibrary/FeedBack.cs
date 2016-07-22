@@ -32,6 +32,8 @@ namespace MessagingLibrary
         public string Code{ get; set; }
         public string Message{ get; set; }
         public FeedBackType Type { get; set; }
+        public bool IsValid { get; set; }
+
         public void AddMessage(string code, string message, FeedBackType type)
         {
             this.Code = code;

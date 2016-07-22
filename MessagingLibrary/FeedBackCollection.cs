@@ -48,6 +48,8 @@ namespace MessagingLibrary
             set { throw new NotImplementedException("Setting Type is not possible for FeedBackCollection"); }
         }
 
+        public bool IsValid { get; set; }
+
         public void AddMessage(string code, string message)
         {
             Messages.Add(new FeedBack(code,message));

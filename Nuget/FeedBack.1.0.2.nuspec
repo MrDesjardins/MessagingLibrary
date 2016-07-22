@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>FeedBack</id>
+        <version>1.0.2</version>
+        <title>FeedBack Message Library</title>
+        <authors>Patrick Desjardins</authors>
+        <owners>Patrick Desjardins</owners>
+        <projectUrl>https://github.com/MrDesjardins/MessagingLibrary</projectUrl>
+        <iconUrl>https://raw.github.com/MrDesjardins/MessagingLibrary/master/Nuget/feedbackIcon.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>This is a simple light library to use between your layers to send feedback for operation.</description>
+        <summary>This is a simple light library to use between your layers to send feedback for operation.</summary>
+        <releaseNotes>Third version</releaseNotes>
+        <language>en-US</language>
+        <tags>message, log, communication</tags>
+    </metadata>
+    <files>
+        <file src="..\MessagingLibrary\bin\Debug\MessagingLibrary.dll" target="lib\MessagingLibrary.dll" />
+    </files>
+</package>
